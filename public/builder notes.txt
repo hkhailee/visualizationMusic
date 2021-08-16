@@ -1,0 +1,49 @@
+
+
+Author: Hailee Kiesecker
+August 2021
+
+
+# The main issue of this whole project is how much data there is going to be to sort
+through to find similar sounds.
+
+Say we have 100 songs in our database, and each songs part is organized in 10 second bursts
+
+each song with an average of 3 minutes will have around 18 stored informations on the bios of that part of the song.
+
+for 100 songs thats 1,800 data entry points.
+
+in order to compare someones given 10-15 second interval, you need to at times move into the next data entry point of a song
+
+that meaning given song 1 at second 45 - 55 (the part that we like and want to visualize)
+
+songs 3 and 4 might be similar, however song 3's similarity to song 1's at that point might traverse, 2 timestamps of the song
+
+same with song 4.
+
+this can be a huge time space complexity.
+
+# ** potential solution;
+
+having core values in each time entry point and evaluation, store them in a hash table or multiple hash tables. 
+
+ranking the tables look up by coefficent appropriatness ( attributes that contribute the most to the main sound )
+
+we can begin to automatically take away options if main attributes are not being met in the first few hash tables.
+
+ 1. so hash table 01 has tempo of each part of a music clip. if it is within a certain range (those values can be accessed in O(1) time)
+
+ 2. stored in hash table 01 is the next hash table 02, looking in hashtable 2 we will find the next most influential attribute
+
+ 3. this will continue until all evaluations are met. if more than X amount of song clips are returned. choose ones with minimal distance
+ between song and original. 
+
+ # Getting started
+
+ Collection of data. using pyAudioAnalysis
+
+ collect 5 audio files, change parameteres to eactract features in 10 second blocks
+
+ store extracted infromation in csv file containing time stamp data and song name
+
+ # unsupervised kmeans- KNN clustering 
