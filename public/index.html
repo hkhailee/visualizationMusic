@@ -1,9 +1,8 @@
 ﻿<!DOCTYPE html>
-<script type="module" src="firebaseLaunchLogic.js"></script> 
-<link rel="stylesheet" href="style.css">
+
 
 <header role="banner">
-    <h1>visualization of music</h1>
+    <h1>CoreGliss</h1>
     <nav role="navigation">
         <div class="topnav">
             <a href="#about_hop">About</a>
@@ -15,70 +14,73 @@
 </header>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Moment of Visualization - Kie</title>
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main_style.css">
+    <script type="module" src="firebaseLaunchLogic.js"></script>
+
+    <title>Moment of Visualization - Kie</title>
+</head>
+<body>
 
 
-        <div class="row">
-            <div class="leftcolumn">
-                <div class="card" id="in_hop">
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card" id="in_hop">
 
-                    <h1>Input</h1>
-                    <h2>
-                        Select a song:
-                    </h2>
-                    <!-- search dropdown -->
-                    <form role="search" id="form">
-                        <input type="search" id="query" name="q"
-                               placeholder="Search..."
-                               aria-label="Search through site content">
-                        <button><svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg></button>
+                <h1>Input</h1>
+                <h2>
+                    Select a song:
+                </h2>
+                <!-- search dropdown -->
+                <form role="search" id="form">
+                    <input type="search" id="query" name="q"
+                            placeholder="Search..."
+                            aria-label="Search through site content">
+                    <button><svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg></button>
 
-                    </form>
+                </form>
 
-                    <h5>Song information: </h5>
-                    <h5>push button for image generation==> <button class="gen_button" onclick="alert('generated!')">generate!</button></h5>
+                <h5>Song information: </h5>
+                <h5>push button for image generation==> <button class="gen_button" onclick="alert('generated!')">generate!</button></h5>
 
-                </div>
-                <div class="card">
-                    <a id="vis_hop">
-                        <h1>Visualization</h1>
-                        <img class="fakeimg" style="height:50%" src="https://d3d0j1rbr6hur5.cloudfront.net/images/flashplaceholder_wc.jpg" alt="Sample Image Creation">
-                    </a>
-                </div>
+            </div>
+            <div class="card">
+                <a id="vis_hop">
+                    <h1>Visualization</h1>
+                    <img class="fakeimg" style="height:50%" src="https://d3d0j1rbr6hur5.cloudfront.net/images/flashplaceholder_wc.jpg" alt="Sample Image Creation">
+                </a>
+            </div>
 
-                <div class="card">
-                    <a id="rec_hop">
-                        <h1>Recomendations</h1>
+            <div class="card">
+                <a id="rec_hop">
+                    <h1>Recomendations</h1>
 
-                        <p>thanks</p>
-                    </a>
-                </div>
+                    <p>thanks</p>
+                </a>
             </div>
         </div>
+    </div>
 
 
 
-        <!-- functionality for searchbar -->
-        <script>const f = document.getElementById('form');
-        const q = document.getElementById('query');
-        const google = 'https://www.google.com/search?q=';
+    <!-- functionality for searchbar -->
+    <script>const f = document.getElementById('form');
+    const q = document.getElementById('query');
+    const google = 'https://www.google.com/search?q=';
 
 
-        function submitted(event) {
-            event.preventDefault();
-            const url = google + '+' + q.value;
-            const win = window.open(url, '_blank');
-            win.focus();
-        }
+    function submitted(event) {
+        event.preventDefault();
+        const url = google + '+' + q.value;
+        const win = window.open(url, '_blank');
+        win.focus();
+    }
 
-        f.addEventListener('submit', submitted);</script>
-    </body>
-    <!-- basic information-->
+    f.addEventListener('submit', submitted);</script>
+</body>
+<!-- basic information-->
 
 
 </html>
